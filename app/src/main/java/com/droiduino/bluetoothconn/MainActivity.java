@@ -71,10 +71,6 @@ public class MainActivity extends AppCompatActivity {
             createConnectThread.start();
         }
 
-        String cmdText = null;
-        cmdText = "1";
-        connectedThread.write(cmdText);
-
         /*
         Second most important piece of Code. GUI Handler
          */
@@ -87,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
                             case 1:
                                 toolbar.setSubtitle("Conectado a " + deviceName);
                                 progressBar.setVisibility(View.GONE);
+                                String cmdText = null;
+                                cmdText = "1";
+                                connectedThread.write(cmdText);
                                 //buttonConnect.setEnabled(true);
                                 //buttonToggle.setEnabled(true);
                                 break;
